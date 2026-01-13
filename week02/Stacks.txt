@@ -1,0 +1,14 @@
+W02 Learning Activity – Stacks
+
+I manually traced the stack operations in SimpleStack.cs.
+
+Stack is shown from bottom to top.
+
+Final stack contents:
+1, 13, 17
+
+Explanation:
+The stack follows LIFO (Last In, First Out).
+Each Push adds to the back of the stack.
+Each Pop removes the most recent item pushed.
+After tracing all operations, the remaining values are 1, 13, and 17.
