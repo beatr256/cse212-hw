@@ -1,0 +1,56 @@
+W01 Learning Activity – Dynamic Arrays
+
+PART 1: Dynamic Arrays
+
+Initial dynamic array:
+Capacity = 4
+Size = 0
+[ _, _, _, _ ]
+
+Insert A:
+[ A, _, _, _ ]
+
+Insert B:
+[ A, B, _, _ ]
+
+Insert C:
+[ A, B, C, _ ]
+
+Insert D:
+[ A, B, C, D ]
+
+Insert E:
+The array is full, so a new array of capacity 8 is created.
+All existing values are copied to the new array.
+E is inserted at index 4.
+
+Result:
+[ A, B, C, D, E, _, _, _ ]
+
+Remove B:
+Removing B requires shifting items to the left.
+
+Result:
+[ A, C, D, E ]
+
+Add B to the end:
+[ A, C, D, E, B ]
+
+Observation:
+Removing an element early in the list requires more work than adding to the end.
+
+
+PART 2: Evaluating Performance (Big-O)
+
+DoSomething(int n):
+Two loops run n times.
+O(n) + O(n) = O(n)
+
+DoSomethingElse(List<string> words):
+Two nested loops both depend on words.Count.
+O(n * n) = O(n^2)
+
+DoAnotherThing(List<string> words):
+Outer loop depends on words.Count.
+Inner loop depends on sentence length (constant).
+O(n * 1) = O(n)
