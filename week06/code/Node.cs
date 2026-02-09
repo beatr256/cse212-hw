@@ -9,37 +9,41 @@ public class Node
         this.Data = data;
     }
 
+    // Problem 1: Insert unique values only
     public void Insert(int value)
     {
-        // TODO Start Problem 1
-
         if (value < Data)
         {
-            // Insert to the left
             if (Left is null)
                 Left = new Node(value);
             else
                 Left.Insert(value);
         }
-        else
+        else if (value > Data)
         {
-            // Insert to the right
             if (Right is null)
                 Right = new Node(value);
             else
                 Right.Insert(value);
         }
+        // Do nothing if value == Data (skip duplicates)
     }
 
+    // Problem 2: Contains
     public bool Contains(int value)
     {
-        // TODO Start Problem 2
-        return false;
+        if (value == Data) return true;
+        if (value < Data)
+            return Left?.Contains(value) ?? false;
+        else
+            return Right?.Contains(value) ?? false;
     }
 
+    // Problem 4: Get tree height
     public int GetHeight()
     {
-        // TODO Start Problem 4
-        return 0; // Replace this line with the correct return statement(s)
+        int leftHeight = Left?.GetHeight() ?? 0;
+        int rightHeight = Right?.GetHeight() ?? 0;
+        return 1 + Math.Max(leftHeight, rightHeight);
     }
 }
